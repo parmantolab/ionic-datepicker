@@ -14,7 +14,8 @@ angular.module('ionic-datepicker.provider', [])
       templateType: 'popup',
       showTodayButton: false,
       closeOnSelect: false,
-      disableWeekdays: []
+      disableWeekdays: [],
+      animation: 'slide-in-up'
     };
 
     this.configDatePicker = function (inputObj) {
@@ -210,7 +211,7 @@ angular.module('ionic-datepicker.provider', [])
 
       $ionicModal.fromTemplateUrl('ionic-datepicker-modal.html', {
         scope: $scope,
-        animation: 'slide-in-up'
+        animation: config.animation || 'slide-in-up'
       }).then(function (modal) {
         $scope.modal = modal;
         //add possibility to modify the backdrop
