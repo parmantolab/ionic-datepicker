@@ -214,7 +214,7 @@ angular.module('ionic-datepicker.provider', [])
       }).then(function (modal) {
         $scope.modal = modal;
         //add possibility to modify the backdrop
-        $scope.modal.$el.addClass('ionic-datepicker-backdrop');
+        $scope.modal.$el.addClass('ionic_datepicker_modal_backdrop');
       });
 
       $scope.$on('$destroy', function () {
