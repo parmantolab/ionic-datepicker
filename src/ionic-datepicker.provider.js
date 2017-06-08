@@ -231,6 +231,15 @@ angular.module('ionic-datepicker.provider', [])
         closeModal();
       };
 
+      var scopeId = $scope.$id;
+      $scope.$on("modal.hidden",function(modal) {
+          if (modal.currentScope) {
+              if (scopeId === modal.currentScope.$id) {
+                  modal.currentScope.$destroy();
+              }
+          }
+      })
+
       //Open datepicker popup
       provider.openDatePicker = function (ipObj) {
         var buttons = [];
